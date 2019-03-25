@@ -1,0 +1,93 @@
+// Layout
+//
+// Styles for managing the structural hierarchy of the site.
+
+.container, #content {
+  margin: 0 10% 0 8%;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  padding-left:  1.5rem;
+  padding-right: 1.5rem;
+  max-width: 54em;
+}
+
+.page-content > section, #content > .outline-2 {
+  -webkit-column-width: 24em; /* Chrome, Safari, Opera */
+  -moz-column-width: 24em; /* Firefox */  
+  column-width: 24em;
+
+  -webkit-column-gap: 2em; /* Chrome, Safari, Opera */
+  -moz-column-gap: 2em; /* Firefox */
+  column-gap: 2em;
+}
+
+.page-content > section, #content > .outline-2 {
+  margin-top: 2.5em;
+}
+
+.page-content > section ~ section, #content > .outline-2 ~ .outline-2 {
+  margin-top: 0;
+}
+
+.page-content > section > h2, #content > .outline-2 > h2 {
+  margin-top: 0;
+}
+
+.page-content > section, footer, .license, #content > .outline-2 {
+  border-top: 1px solid #ddd;
+}
+
+.page-content > section, footer, .license, #content > .outline-2 {
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.page-header, .title {
+  border-bottom: 0;
+  padding-bottom: 0;
+  padding: 60px 0 30px;
+}
+
+.page-header .date, .page-header p, .footer p, .title > .subtitle {
+  font-weight: 400;
+  color: #999;
+}
+
+.title > .subtitle {
+  font-size: 1rem;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.title {
+  line-height: 1;
+}
+
+footer {
+  margin-bottom: 2rem;
+}
+
+pre, li, .highlighter-rouge {
+  -webkit-column-break-inside: avoid; /* Chrome, Safari */
+  page-break-inside: avoid;           /* Theoretically FF 20+ */
+  break-inside: avoid-column;         /* IE 11 */
+}
+
+.wrap {
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 20%;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .container, #content {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+  .wrap {
+    background-size: 40%;
+  }
+}

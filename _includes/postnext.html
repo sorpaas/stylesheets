@@ -1,0 +1,16 @@
+<div class="license">
+  <div class="toc-item">
+    {% if page.next.url %}
+    <h3>Next: <a href="{{ page.next.url | prepend: site.baseurl }}">{{ page.next.title }}</a></h3>
+    <p>{{ page.next.date | date: "%B %e, %Y" }}</p>
+    <p>{{ page.next.subtitle }}</p>
+    {% endif %}
+
+    {% if page.previous.url %}
+    <h3>Previous: <a href="{{ page.previous.url | prepend: site.baseurl }}">{{ page.previous.title }}</a></h3>
+    <p>{{ page.previous.date | date: "%B %e, %Y" }}</p>
+    <p>{{ page.previous.subtitle }}</p>
+    {% endif %}
+    <h3>Up: <a href="{{ '/' | prepend: site.baseurl }}">{{ site.title }}</a></h3>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+{% if include.toc_pages %}
+{% assign toc_pages = include.toc_pages %}
+{% else %}
+{% assign toc_pages = page.toc_pages %}
+{% endif %}
+
+{% capture content %}
+{% for page in toc_pages %}
+{% include toc-item.html item=page %}
+{% endfor %}
+{% endcapture %}
+
+{% include toc-raw.html content=content %}

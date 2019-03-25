@@ -1,0 +1,9 @@
+<li>
+  <div class="toc-item">
+    <h3><a href="{% if include.item.url contains '://' %}{{ include.item.url }}{% else %}{{ include.item.url | prepend: site.baseurl }}{% endif %}">{{ include.item.title }}</a></h3>
+    <p>{{ include.item.subtitle }}</p>
+    {% if include.item.abstract %}
+    {{ include.item.abstract | markdownify }}
+    {% endif %}
+  </div>
+</li>

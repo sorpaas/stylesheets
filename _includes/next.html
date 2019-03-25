@@ -1,0 +1,19 @@
+<div class="license">
+    <div class="toc-item">
+      {% if page.next_page %}
+      <h3>Next: <a href="{{ page.next_page.url | prepend: site.baseurl }}">{{ page.next_page.title }}</a></h3>
+      <p>{{ page.next_page.subtitle }}</p>
+
+      {% if page.next_page.abstract %}
+      {{ page.next_page.abstract | markdownify }}
+      {% endif %}
+      {% endif %}
+
+      {% if page.prev_page %}
+      <h3>Previous: <a href="{{ page.prev_page.url | prepend: site.baseurl }}">{{ page.prev_page.title }}</a></h3>
+      {% endif %}
+      {% if page.up_page %}
+      <h3>Up: <a href="{{ page.up_page.url | prepend: site.baseurl }}">{{ page.up_page.title }}</a></h3>
+      {% endif %}
+    </div>
+</div>

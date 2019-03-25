@@ -1,0 +1,127 @@
+@import "variables";
+
+// Body resets
+//
+// Update the foundational and global aspects of the page.
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body,
+.wrap {
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-root;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+body {
+  color: #515151;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+// No `:visited` state is required by default (browsers will use `a`)
+a {
+  color: #268bd2;
+  text-decoration: none;
+
+  // `:focus` is linked to `:hover` for basic accessibility
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+
+  strong {
+    color: inherit;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0 0 1rem;
+  border-radius: 5px;
+}
+
+$breakpoint-alpha: 480px;
+
+table {
+  background: #00B5E8;
+  border-radius: .4em;
+  overflow: hidden;
+  min-width: 300px; // adjust to your needs
+  padding: 0.5em 0;
+  display: block;
+
+  a {
+    color: #FF6E26;
+  }
+
+  tr {
+    border-color: #00B5E8;
+  }
+
+  th {
+    display: none;
+    color: darken(#dd5, 40%);
+  }
+
+  td {
+    display: block;
+
+    &:first-child {
+      padding-top: .5em;
+    }
+    &:last-child {
+      padding-bottom: .5em;
+    }
+
+    &:before {
+      content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
+      font-weight: bold;
+
+      // optional stuff to make it look nicer
+      width: 6.5em; // magic number :( adjust according to your own content
+      display: inline-block;
+      // end options
+
+      @media (min-width: $breakpoint-alpha) {
+        display: none;
+      }
+    }
+  }
+
+  th, td {
+    text-align: left;
+    margin: .5em 1em;
+
+    &:before {
+      color: #dd5;
+    }
+
+    @media (min-width: $breakpoint-alpha) {
+      padding: 0.2em 1em !important;
+      display: table-cell;
+      padding: .25em .5em;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }  
+}

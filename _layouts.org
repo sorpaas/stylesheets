@@ -1,0 +1,14 @@
+* Head
+:PROPERTIES:
+:CUSTOM_ID: head
+:END:
+
+#+BEGIN_EXPORT html
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+#+END_EXPORT
+
+#+TOC: headlines 2
+
+#+BEGIN_EXPORT html
+<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+#+END_EXPORT

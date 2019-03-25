@@ -1,0 +1,36 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>{{ site.description | markdownify }}</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    {% comment %}
+      The code below dynamically generates a sidebar nav of pages with
+      `layout: page` in the front-matter. See readme for usage.
+    {% endcomment %}
+
+    <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}/">
+      {% if site.lang == "jbo" or page.lang == "jbo" %}ralju
+      {% else %}Home
+      {% endif %}</a>
+    {% for node in site.toc_pages %}
+    {% if node.toc_depth == 1 %}
+    <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+    {% endif %}
+    {% endfor %}
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; {{ site.time | date: '%Y' }}.
+      {% if site.lang == "jbo" %}finti fa la viz
+      {% else %}All rights reserved.
+      {% endif %}
+    </p>
+  </div>
+</div>
