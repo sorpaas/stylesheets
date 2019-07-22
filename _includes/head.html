@@ -6,9 +6,9 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <meta property="og:title" content="{% if site.safe %}{{ layout.title }}{% else %}{{ layout.title | flatify }}{% endif %}">
+  <meta property="og:title" content="{% if site.safe %}{{ page.title }}{% else %}{{ layout.title | flatify }}{% endif %}">
   {% if layout.subtitle %}
-  <meta property="og:description" content="{% if site.safe %}{{ layout.subtitle }}{% else %}{{ layout.subtitle | flatify }}{% endif %}">
+  <meta property="og:description" content="{% if site.safe %}{{ page.subtitle }}{% else %}{{ layout.subtitle | flatify }}{% endif %}">
   {% endif %}
   <meta property="og:site_name" content="{{ site.title }}">
   <meta name="author" content="{{ site.author.name }}">
@@ -19,17 +19,29 @@
   {% endif %}
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{% if site.safe %}{{ layout.title }}{% else %}{{ layout.title | flatify }}{% endif %}">
+  <meta name="twitter:title" content="{% if site.safe %}{{ page.title }}{% else %}{{ layout.title | flatify }}{% endif %}">
   {% if layout.subtitle %}
-  <meta name="twitter:description" content="{% if site.safe %}{{ layout.subtitle }}{% else %}{{ layout.subtitle | flatify }}{% endif %}">
+  <meta name="twitter:description" content="{% if site.safe %}{{ page.subtitle }}{% else %}{{ layout.subtitle | flatify }}{% endif %}">
   {% endif %}
   <meta name="twitter:site" content="@sorpaas">
 
   <title>
-    {% if title == site.title %}
-      {{ site.title }}
+    {% if site.safe %}
+
+    {% if page.title == site.title %}
+    {{ site.title }}
     {% else %}
-      {{ layout.title | flatify }} &middot; {{ site.title }}
+    {{ page.title }} &middot; {{ site.title }}
+    {% endif %}
+
+    {% else %}
+
+    {% if title == site.title %}
+    {{ site.title }}
+    {% else %}
+    {{ layout.title | flatify }} &middot; {{ site.title }}
+    {% endif %}
+
     {% endif %}
   </title>
 
