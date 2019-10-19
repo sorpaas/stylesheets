@@ -1,3 +1,11 @@
+* Options
+:PROPERTIES:
+:CUSTOM_ID: property
+:END:
+
+#+OPTIONS:   H:6 num:nil toc:nil \n:nil ::t |:t ^:t -:t f:t *:t tex:t d:(HIDE) tags:not-in-toc html-postamble:nil html-style:nil
+#+HTML_HEAD: {% include org-extra-head.html %}
+
 * Head
 :PROPERTIES:
 :CUSTOM_ID: head
